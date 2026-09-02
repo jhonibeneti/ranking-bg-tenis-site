@@ -25,7 +25,7 @@ const rawGroups = [
         { a: 'Marcelo da Silva Ros', b: 'Rudimar Padilha', score: '6–1  ·  6–2', winner: 'Marcelo da Silva Ros', status: 'final' },
         { a: 'Filipe de Conto', b: 'Jonas Emilio', score: '6–4  ·  5–7  ·  10–5', winner: 'Filipe de Conto', status: 'final' },
         { a: 'Rafael Ravanello', b: 'Felipe Migoski', score: '7–6  ·  6–3', winner: 'Rafael Ravanello', status: 'final' },
-        { a: 'Matheus Klaus', b: 'Paulo Cesar', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
+        { a: 'Matheus Klaus', b: 'Paulo Cesar', score: '7–5  ·  7–6', winner: 'Matheus Klaus', status: 'final' },
       ],
       2: [
         { a: 'Filipe de Conto', b: 'BYE', score: '6–2  ·  6–1', winner: 'Filipe de Conto', status: 'final' },
