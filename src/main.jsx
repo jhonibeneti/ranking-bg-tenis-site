@@ -1,102 +1,28 @@
-import React, { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ChevronRight, Activity, Medal } from 'lucide-react';
 import './styles.css';
 
-const rounds = [
-  { id: 1, label: 'Rodada 1', dates: '17/08 — 30/08' },
-  { id: 2, label: 'Rodada 2', dates: '31/08 — 13/09' },
-  { id: 3, label: 'Rodada 3', dates: '14/09 — 27/09' },
-  { id: 4, label: 'Rodada 4', dates: '28/09 — 11/10' },
-  { id: 5, label: 'Rodada 5', dates: '12/10 — 25/10' },
-  { id: 6, label: 'Rodada 6', dates: '26/10 — 08/11' },
-  { id: 7, label: 'Rodada 7', dates: '09/11 — 22/11' },
-  { id: 8, label: 'Rodada 8', dates: '23/11 — 06/12' },
-  { id: 9, label: 'Rodada 9', dates: '07/12 — 21/12' },
-];
-
-const rawGroups = [
-  {
-    name: 'Grupo 1',
-    players: ['Vitor Tozzo', 'Rudimar Padilha', 'Jonas Emilio', 'Felipe Migoski', 'Paulo Cesar', 'Matheus Klaus', 'Rafael Ravanello', 'Filipe de Conto', 'Marcelo da Silva Ros'],
-    matches: {
-      1: [
-        { a: 'Vitor Tozzo', b: 'BYE', score: '—', status: 'bye' },
-        { a: 'Marcelo da Silva Ros', b: 'Rudimar Padilha', score: '6–1  ·  6–2', winner: 'Marcelo da Silva Ros', status: 'final' },
-        { a: 'Filipe de Conto', b: 'Jonas Emilio', score: '6–4  ·  5–7  ·  10–5', winner: 'Filipe de Conto', status: 'final' },
-        { a: 'Rafael Ravanello', b: 'Felipe Migoski', score: '7–6  ·  6–3', winner: 'Rafael Ravanello', status: 'final' },
-        { a: 'Matheus Klaus', b: 'Paulo Cesar', score: '7–5  ·  7–6', winner: 'Matheus Klaus', status: 'final' },
-      ],
-      2: [
-        { a: 'Filipe de Conto', b: 'BYE', score: '6–2  ·  6–1', winner: 'Filipe de Conto', status: 'final' },
-        { a: 'Marcelo da Silva Ros', b: 'Vitor Tozzo', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Rafael Ravanello', b: 'Rudimar Padilha', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Jonas Emilio', b: 'Matheus Klaus', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Paulo Cesar', b: 'Felipe Migoski', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-      ],
-      3: [
-        { a: 'Matheus Klaus', b: 'BYE', score: '6–4  ·  6–3', winner: 'Matheus Klaus', status: 'final' },
-        { a: 'Vitor Tozzo', b: 'Filipe de Conto', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Marcelo da Silva Ros', b: 'Rafael Ravanello', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Paulo Cesar', b: 'Rudimar Padilha', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Felipe Migoski', b: 'Jonas Emilio', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-      ],
-      4: [
-        { a: 'Felipe Migoski', b: 'BYE', score: '6–3  ·  6–0', winner: 'Felipe Migoski', status: 'final' },
-        { a: 'Rafael Ravanello', b: 'Vitor Tozzo', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Matheus Klaus', b: 'Filipe de Conto', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Jonas Emilio', b: 'Rudimar Padilha', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Marcelo da Silva Ros', b: 'Paulo Cesar', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-      ],
-    },
-  },
-  {
-    name: 'Grupo 2',
-    players: ['Juliano Spuldaro', 'Roque Edson', 'Leonardo Ravanello', 'Gilberto Junior', 'João Pedro Pinheiro', 'Renato Marcon', 'Fernando Lajus', 'Marcelo Covatti', 'Jhoni Beneti'],
-    matches: {
-      1: [
-        { a: 'Juliano Spuldaro', b: 'BYE', score: '—', status: 'bye' },
-        { a: 'Jhoni Beneti', b: 'Roque Edson', score: '2–6  ·  6–4  ·  10–8', winner: 'Jhoni Beneti', status: 'final' },
-        { a: 'Marcelo Covatti', b: 'Leonardo Ravanello', score: '6–1  ·  6–1', winner: 'Marcelo Covatti', status: 'final' },
-        { a: 'Fernando Lajus', b: 'Gilberto Junior', score: '7–6  ·  6–3', winner: 'Fernando Lajus', status: 'final' },
-        { a: 'Renato Marcon', b: 'João Pedro Pinheiro', score: '6–3  ·  6–4', winner: 'Renato Marcon', status: 'final' },
-      ],
-      2: [
-        { a: 'Marcelo Covatti', b: 'BYE', score: '0–0  ·  0–0  ·  0–0', status: 'bye' },
-        { a: 'Jhoni Beneti', b: 'Juliano Spuldaro', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Roque Edson', b: 'Fernando Lajus', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Leonardo Ravanello', b: 'Renato Marcon', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Gilberto Junior', b: 'João Pedro Pinheiro', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-      ],
-      3: [
-        { a: 'Renato Marcon', b: 'BYE', score: '0–0  ·  0–0  ·  0–0', status: 'bye' },
-        { a: 'Jhoni Beneti', b: 'Fernando Lajus', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'João Pedro Pinheiro', b: 'Roque Edson', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Leonardo Ravanello', b: 'Gilberto Junior', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Juliano Spuldaro', b: 'Marcelo Covatti', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-      ],
-      4: [
-        { a: 'Gilberto Junior', b: 'BYE', score: '0–0  ·  0–0  ·  0–0', status: 'bye' },
-        { a: 'Jhoni Beneti', b: 'João Pedro Pinheiro', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Fernando Lajus', b: 'Juliano Spuldaro', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Renato Marcon', b: 'Marcelo Covatti', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-        { a: 'Leonardo Ravanello', b: 'Roque Edson', score: '0–0  ·  0–0  ·  0–0', status: 'scheduled' },
-      ],
-    },
-  },
-];
-
 const avatarColors = ['#d8f36a', '#ffb86b', '#b7a1ff', '#7dd3c7', '#f19bc0', '#94bfff'];
 const initials = (name) => name.split(' ').map((part) => part[0]).slice(0, 2).join('').toUpperCase();
-const clean = (value) => value.replace(/\s+/g, ' ').trim();
-const parseScore = (score = '') => clean(score).split('·').map((set) => set.trim()).filter(Boolean).map((set) => { const [a, b] = set.split('–').map(Number); if (!Number.isFinite(a) || !Number.isFinite(b)) return null; const isTiebreak = a >= 10 || b >= 10; return { a: isTiebreak ? (a > b ? 1 : 0) : a, b: isTiebreak ? (b > a ? 1 : 0) : b, isTiebreak }; }).filter(Boolean);
+const clean = (value) => String(value || '').replace(/\s+/g, ' ').trim();
+const formatUpdatedAt = (value) => {
+  if (!value) return '—';
+  return new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(value));
+};
+const parseScore = (score = '') => clean(score).split('·').map((set) => set.trim()).filter(Boolean).map((set) => {
+  const [a, b] = set.split('–').map(Number);
+  if (!Number.isFinite(a) || !Number.isFinite(b)) return null;
+  const isTiebreak = a >= 10 || b >= 10;
+  return { a: isTiebreak ? (a > b ? 1 : 0) : a, b: isTiebreak ? (b > a ? 1 : 0) : b, isTiebreak };
+}).filter(Boolean);
 
-function buildRanking() {
+function buildRanking(groups) {
   const rows = [];
-  rawGroups.forEach((group) => {
+  groups.forEach((group) => {
     group.players.forEach((player) => rows.push({ name: player, group: group.name, wins: 0, losses: 0, points: 0, played: 0, setsWon: 0, setsLost: 0, gamesFor: 0, gamesAgainst: 0, gameDiff: 0, winDiff: 0, h2h: {} }));
-    Object.values(group.matches).forEach((matches) => matches.forEach((match) => {
-      if (match.status !== 'final' || !match.winner) return;
+    Object.values(group.matches || {}).forEach((matches) => matches.forEach((match) => {
+      if (match.status !== 'final' || !match.winner || match.a === 'BYE' || match.b === 'BYE') return;
       const a = rows.find((row) => row.name === match.a);
       const b = rows.find((row) => row.name === match.b);
       if (!a || !b) return;
@@ -143,11 +69,24 @@ function MatchCard({ match }) {
 }
 
 function App() {
+  const [data, setData] = useState(null);
+  const [loadError, setLoadError] = useState('');
   const [activeRound, setActiveRound] = useState(1);
   const [activeGroup, setActiveGroup] = useState('Todos');
-  const ranking = useMemo(() => buildRanking(), []);
-  const visibleRanking = ranking;
-  const currentMatches = rawGroups.flatMap((group) => group.matches[activeRound] ? group.matches[activeRound].map((match) => ({ ...match, group: group.name })) : []);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/ranking.json`, { cache: 'no-store' })
+      .then((response) => { if (!response.ok) throw new Error('Não foi possível carregar os dados.'); return response.json(); })
+      .then(setData)
+      .catch((error) => setLoadError(error.message));
+  }, []);
+
+  const ranking = useMemo(() => data ? buildRanking(data.groups) : [], [data]);
+  if (loadError) return <div className="data-state error-state">Não foi possível carregar os dados do ranking. Tente novamente em instantes.</div>;
+  if (!data) return <div className="data-state">Carregando dados do ranking…</div>;
+
+  const rounds = data.rounds;
+  const currentMatches = data.groups.flatMap((group) => (group.matches?.[String(activeRound)] || []).map((match) => ({ ...match, group: group.name })));
   const completedMatches = currentMatches.filter((match) => match.status === 'final').length;
 
   return (
@@ -156,12 +95,13 @@ function App() {
         <div className="brand"><div className="brand-mark"><Activity size={19} strokeWidth={2.6} /></div><div><div className="brand-name">RANKING <span>BG</span></div><div className="brand-caption">2º semestre · 3ª classe</div></div></div>
         <nav className="main-nav"><a className="active" href="#ranking">Ranking</a><a href="#rodadas">Rodadas</a><a href="#ranking">Grupos</a></nav>
         <div className="season-badge"><span className="live-dot" />Temporada 2026 <ChevronRight size={15} /></div>
+        <div className="updated-badge"><span>Dados atualizados</span><strong>{formatUpdatedAt(data.updatedAt)}</strong></div>
       </header>
 
       <main className="content">
         <section className="section-block ranking-section" id="ranking">
           <div className="section-heading"><div><div className="eyebrow dark"><span className="eyebrow-line" />RANKING GERAL</div><h2>Os melhores jogadores</h2></div></div>
-          <div className="ranking-layout"><div className="ranking-table"><div className="table-head"><span>#</span><span>Jogador</span><span>Grupo</span><span>J</span><span>V</span><span>SALDO GAMES</span><span>Pts</span></div>{visibleRanking.map((row, index) => <div className={`ranking-row ${index === 0 && activeGroup === 'Todos' ? 'top-row' : ''}`} key={row.name}><span className="rank-number">{String(index + 1).padStart(2, '0')}</span><div className="table-player"><span className="table-avatar" style={{ background: avatarColors[index % avatarColors.length] }}>{initials(row.name)}</span><strong>{row.name}</strong>{index === 0 && activeGroup === 'Todos' && <Medal className="medal" size={16} />}</div><span className="group-chip">{row.group.replace('Grupo ', 'G')}</span><span>{row.played}</span><span className="wins">{row.wins}</span><span className="game-diff">{row.gameDiff > 0 ? '+' : ''}{row.gameDiff}</span><strong className="points">{row.points}</strong></div>)}</div></div>
+          <div className="ranking-layout"><div className="ranking-table"><div className="table-head"><span>#</span><span>Jogador</span><span>Grupo</span><span>J</span><span>V</span><span>SALDO GAMES</span><span>Pts</span></div>{ranking.map((row, index) => <div className={`ranking-row ${index === 0 && activeGroup === 'Todos' ? 'top-row' : ''}`} key={row.name}><span className="rank-number">{String(index + 1).padStart(2, '0')}</span><div className="table-player"><span className="table-avatar" style={{ background: avatarColors[index % avatarColors.length] }}>{initials(row.name)}</span><strong>{row.name}</strong>{index === 0 && activeGroup === 'Todos' && <Medal className="medal" size={16} />}</div><span className="group-chip">{row.group.replace('Grupo ', 'G')}</span><span>{row.played}</span><span className="wins">{row.wins}</span><span className="game-diff">{row.gameDiff > 0 ? '+' : ''}{row.gameDiff}</span><strong className="points">{row.points}</strong></div>)}</div></div>
         </section>
 
         <section className="section-block" id="rodadas">
@@ -175,7 +115,7 @@ function App() {
           <div className="method-note"><strong>Vitória = 3 pontos</strong><span>1. Saldo de vitórias</span><span>2. Confronto direto</span><span>3. Saldo de sets</span><span>4. Saldo de games</span><span>Match tiebreak = 1 game</span></div>
         </section>
       </main>
-      <footer><span>RANKING BG</span><span>Dados da planilha oficial · 2º semestre</span><span>3ª classe</span></footer>
+      <footer><span>RANKING BG</span><span>Dados da planilha oficial · Atualizado em {formatUpdatedAt(data.updatedAt)}</span><span>3ª classe</span></footer>
     </div>
   );
 }

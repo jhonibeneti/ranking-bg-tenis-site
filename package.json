@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
+    "update:data": "python3 tools/generate_ranking_json.py",
     "build": "vite build",
     "check": "tsc --noEmit"
   },
