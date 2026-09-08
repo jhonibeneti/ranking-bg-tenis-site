@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-08T02:25:55.961362+00:00",
+  "updatedAt": "2026-09-08T17:04:47.882513+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -116,8 +116,9 @@
           {
             "a": "Rafael Ravanello",
             "b": "Rudimar Padilha",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "final",
+            "score": "6–4  ·  3–6  ·  10–1",
+            "winner": "Rudimar Padilha"
           },
           {
             "a": "Jonas Emilio",
@@ -258,8 +259,9 @@
           {
             "a": "Jhoni Beneti",
             "b": "Juliano Spuldaro",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "final",
+            "score": "6–3  ·  6–2",
+            "winner": "Jhoni Beneti"
           },
           {
             "a": "Roque Edson",
