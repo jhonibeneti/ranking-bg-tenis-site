@@ -6,8 +6,9 @@ from pathlib import Path
 from openpyxl import load_workbook
 
 SOURCE_URL = 'https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview'
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 XLSX_PATH = Path('/home/ubuntu/tenis-ranking/ranking.xlsx')
-OUTPUT_PATH = Path('/home/ubuntu/ranking-bg-tenis-site/public/data/ranking.json')
+OUTPUT_PATH = PROJECT_ROOT / 'public/data/ranking.json'
 
 NAME_FIXES = {
     'BEY': 'BYE',
