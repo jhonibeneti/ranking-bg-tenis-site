@@ -136,6 +136,18 @@ def parse_match(cell, score_cell):
     return result
 
 
+def orient_winner_first(result):
+    """Keep the winner before the x and align the score with that order."""
+    if result.get('status') != 'final' or not result.get('winner'):
+        return result
+    if result.get('winner') != result.get('b'):
+        return result
+    # A planilha já informa os sets na ordem do ganhador; só reposicionamos os nomes.
+    result['a'], result['b'] = result['b'], result['a']
+    result['winner'] = result['a']
+    return result
+
+
 def group_data(ws, name, player_rows, match_rows):
     players = [normalize_name(ws[f'A{row}'].value) for row in player_rows if clean(ws[f'A{row}'].value)]
     matches = {}
@@ -144,7 +156,7 @@ def group_data(ws, name, player_rows, match_rows):
         for row in match_rows:
             parsed = parse_match(ws[f'{match_col}{row}'], ws[f'{score_col}{row}'])
             if parsed:
-                round_matches.append(parsed)
+                round_matches.append(orient_winner_first(parsed))
         if round_matches:
             matches[str(round_id)] = round_matches
     return {'name': name, 'players': players, 'matches': matches}

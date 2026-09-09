@@ -17,11 +17,17 @@ const parseScore = (score = '') => clean(score).split('·').map((set) => set.tri
   return { a: isTiebreak ? (a > b ? 1 : 0) : a, b: isTiebreak ? (b > a ? 1 : 0) : b, isTiebreak };
 }).filter(Boolean);
 
+const orientWinnerFirst = (match) => {
+  if (match.status !== 'final' || match.winner !== match.b) return match;
+  return { ...match, a: match.b, b: match.a, winner: match.b, score: match.score };
+};
+
 function buildRanking(groups) {
   const rows = [];
   groups.forEach((group) => {
     group.players.forEach((player) => rows.push({ name: player, group: group.name, wins: 0, losses: 0, points: 0, played: 0, setsWon: 0, setsLost: 0, gamesFor: 0, gamesAgainst: 0, gameDiff: 0, winDiff: 0, h2h: {} }));
-    Object.values(group.matches || {}).forEach((matches) => matches.forEach((match) => {
+    Object.values(group.matches || {}).forEach((matches) => matches.forEach((rawMatch) => {
+      const match = orientWinnerFirst(rawMatch);
       if (match.status !== 'final' || !match.winner || match.a === 'BYE' || match.b === 'BYE') return;
       const a = rows.find((row) => row.name === match.a);
       const b = rows.find((row) => row.name === match.b);
@@ -49,7 +55,8 @@ function PlayerPill({ name, winner }) {
   return <span className={winner ? 'player-name winner' : 'player-name'}>{clean(name)}</span>;
 }
 
-function MatchCard({ match }) {
+function MatchCard({ match: rawMatch }) {
+  const match = orientWinnerFirst(rawMatch);
   const isFinal = match.status === 'final';
   const isBye = match.status === 'bye';
   return (
@@ -101,7 +108,7 @@ function App() {
       <main className="content">
         <section className="section-block ranking-section" id="ranking">
           <div className="section-heading"><div><div className="eyebrow dark"><span className="eyebrow-line" />RANKING GERAL</div><h2>Os melhores jogadores</h2></div></div>
-          <div className="ranking-layout"><div className="ranking-table"><div className="table-head"><span>#</span><span>Jogador</span><span>Grupo</span><span>J</span><span>V</span><span>SALDO GAMES</span><span>Pts</span></div>{ranking.map((row, index) => <div className={`ranking-row ${index === 0 && activeGroup === 'Todos' ? 'top-row' : ''}`} key={row.name}><span className="rank-number">{String(index + 1).padStart(2, '0')}</span><div className="table-player"><span className="table-avatar" style={{ background: avatarColors[index % avatarColors.length] }}>{initials(row.name)}</span><strong>{row.name}</strong>{index === 0 && activeGroup === 'Todos' && <Medal className="medal" size={16} />}</div><span className="group-chip">{row.group.replace('Grupo ', 'G')}</span><span>{row.played}</span><span className="wins">{row.wins}</span><span className="game-diff">{row.gameDiff > 0 ? '+' : ''}{row.gameDiff}</span><strong className="points">{row.points}</strong></div>)}</div></div>
+          <div className="ranking-layout"><div className="ranking-table"><div className="table-head"><span>#</span><span>Jogador</span><span>Grupo</span><span>J</span><span>V</span><span>SG</span><span>Pts</span></div>{ranking.map((row, index) => <div className={`ranking-row ${index === 0 && activeGroup === 'Todos' ? 'top-row' : ''}`} key={row.name}><span className="rank-number">{String(index + 1).padStart(2, '0')}</span><div className="table-player"><span className="table-avatar" style={{ background: avatarColors[index % avatarColors.length] }}>{initials(row.name)}</span><strong>{row.name}</strong>{index === 0 && activeGroup === 'Todos' && <Medal className="medal" size={16} />}</div><span className="group-chip">{row.group.replace('Grupo ', 'G')}</span><span>{row.played}</span><span className="wins">{row.wins}</span><span className="game-diff">{row.gameDiff > 0 ? '+' : ''}{row.gameDiff}</span><strong className="points">{row.points}</strong></div>)}</div></div>
         </section>
 
         <section className="section-block" id="rodadas">

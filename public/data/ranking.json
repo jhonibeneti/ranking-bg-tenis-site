@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-08T17:04:47.882513+00:00",
+  "updatedAt": "2026-09-09T11:46:31.301586+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -72,15 +72,15 @@
             "score": "—"
           },
           {
-            "a": "Marcelo da Silva Ros",
-            "b": "Rudimar Padilha",
+            "a": "Rudimar Padilha",
+            "b": "Marcelo da Silva Ros",
             "status": "final",
             "score": "6–1  ·  6–2",
             "winner": "Rudimar Padilha"
           },
           {
-            "a": "Filipe de Conto",
-            "b": "Jonas Emilio",
+            "a": "Jonas Emilio",
+            "b": "Filipe de Conto",
             "status": "final",
             "score": "6–4  ·  5–7  ·  10–5",
             "winner": "Jonas Emilio"
@@ -114,8 +114,8 @@
             "score": "0–0  ·  0–0  ·  0–0"
           },
           {
-            "a": "Rafael Ravanello",
-            "b": "Rudimar Padilha",
+            "a": "Rudimar Padilha",
+            "b": "Rafael Ravanello",
             "status": "final",
             "score": "6–4  ·  3–6  ·  10–1",
             "winner": "Rudimar Padilha"
@@ -228,8 +228,8 @@
             "winner": "Jhoni Beneti"
           },
           {
-            "a": "Marcelo Covatti",
-            "b": "Leonardo Ravanello",
+            "a": "Leonardo Ravanello",
+            "b": "Marcelo Covatti",
             "status": "final",
             "score": "6–1  ·  6–1",
             "winner": "Leonardo Ravanello"
@@ -242,8 +242,8 @@
             "winner": "Fernando Lajus"
           },
           {
-            "a": "Renato Marcon",
-            "b": "João Pedro Pinheiro",
+            "a": "João Pedro Pinheiro",
+            "b": "Renato Marcon",
             "status": "final",
             "score": "6–3  ·  6–4",
             "winner": "João Pedro Pinheiro"

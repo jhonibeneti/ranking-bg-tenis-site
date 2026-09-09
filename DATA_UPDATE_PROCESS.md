@@ -14,13 +14,13 @@ https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W
 
 3. Executar `pnpm run update:data` dentro do projeto. Esse comando roda `tools/generate_ranking_json.py`, lê a aba `3° CLASSE`, normaliza jogadores e confrontos e gera `public/data/ranking.json`.
 
-4. O site carrega exclusivamente `data/ranking.json`. Os componentes visuais não devem conter placares ou jogadores hardcoded.
+4. O site carrega exclusivamente `data/ranking.json`. Os componentes visuais não devem conter placares ou jogadores hardcoded. Na tabela, a coluna de saldo de games é exibida com o cabeçalho abreviado `SG` e os valores ficam alinhados à direita.
 
 5. O JSON registra `updatedAt`, `sourceUrl`, `rounds` e `groups`. A data `updatedAt` é exibida no cabeçalho e no rodapé do site.
 
 ## Identificação do vencedor
 
-A planilha não deve ser interpretada pela posição do nome antes ou depois do `×`. O extrator abre o XLSX com rich text habilitado e identifica o vencedor pela formatação verde e negrito. O Google Sheets pode exportar essa formatação de duas maneiras: diretamente no trecho do nome vencedor ou como um trecho verde/negrito em branco imediatamente antes do nome. O script trata os dois casos.
+A planilha não deve ser interpretada pela posição do nome antes ou depois do `×`. O extrator abre o XLSX com rich text habilitado e identifica o vencedor pela formatação verde e negrito. O Google Sheets pode exportar essa formatação de duas maneiras: diretamente no trecho do nome vencedor ou como um trecho verde/negrito em branco imediatamente antes do nome. O script trata os dois casos. Depois de identificar o vencedor, o JSON normaliza o confronto para que o ganhador apareça sempre antes do `×`. A planilha já registra os sets na ordem do ganhador, portanto o placar é preservado nessa mesma ordem e não é invertido novamente.
 
 Diferenças evidentes de grafia são normalizadas, incluindo `BEY` para `BYE`, `Mathues Klaus` para `Matheus Klaus`, `Feilipe de Cont` para `Filipe de Conto`, `Marcelo da Siva Ros` para `Marcelo da Silva Ros`, `Leonardo Ravanelo` para `Leonardo Ravanello` e `Rafael Ravanello]` para `Rafael Ravanello`.
 
