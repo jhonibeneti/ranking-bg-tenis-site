@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-09T11:46:31.301586+00:00",
+  "updatedAt": "2026-09-10T22:38:59.261690+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -277,10 +277,11 @@
             "score": "0–0  ·  0–0  ·  0–0"
           },
           {
-            "a": "Gilberto Junior",
-            "b": "João Pedro Pinheiro",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "a": "João Pedro Pinheiro",
+            "b": "Gilberto Junior",
+            "status": "final",
+            "score": "6–1  ·  6–4",
+            "winner": "João Pedro Pinheiro"
           }
         ],
         "3": [

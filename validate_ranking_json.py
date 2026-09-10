@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-path = Path('/home/ubuntu/ranking-bg-tenis-site/public/data/ranking.json')
+path = Path(__file__).resolve().parent / 'public/data/ranking.json'
 data = json.loads(path.read_text(encoding='utf-8'))
 assert data['schemaVersion'] == 1
 assert data['sourceUrl'].startswith('https://docs.google.com/spreadsheets/')
@@ -17,6 +17,7 @@ for group in data['groups']:
             assert match['a'] and match['b']
             if match['status'] == 'final':
                 assert match.get('winner') not in (None, 'BYE')
+                assert match['a'] == match['winner']
                 assert match.get('score')
                 finals.append((group['name'], round_id, match['a'], match['b'], match['score'], match['winner']))
             elif match['status'] == 'scheduled':
