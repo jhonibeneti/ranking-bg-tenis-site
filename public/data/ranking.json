@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-10T22:38:59.261690+00:00",
+  "updatedAt": "2026-09-13T10:30:23.996119+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -273,8 +273,9 @@
           {
             "a": "Leonardo Ravanello",
             "b": "Renato Marcon",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "final",
+            "score": "6–0  ·  6–4",
+            "winner": "Leonardo Ravanello"
           },
           {
             "a": "João Pedro Pinheiro",
