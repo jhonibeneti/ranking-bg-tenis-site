@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-13T10:30:23.996119+00:00",
+  "updatedAt": "2026-09-14T20:23:44.905446+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -108,10 +108,11 @@
             "score": "6–2  ·  6–1"
           },
           {
-            "a": "Marcelo da Silva Ros",
-            "b": "Vitor Tozzo",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "a": "Vitor Tozzo",
+            "b": "Marcelo da Silva Ros",
+            "status": "final",
+            "score": "6–3  ·  6–1",
+            "winner": "Vitor Tozzo"
           },
           {
             "a": "Rudimar Padilha",
