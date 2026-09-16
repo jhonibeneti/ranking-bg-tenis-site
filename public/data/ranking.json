@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-15T11:06:26.728771+00:00",
+  "updatedAt": "2026-09-16T11:01:35.966037+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -130,8 +130,7 @@
           {
             "a": "Paulo Cesar",
             "b": "Felipe Migoski",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "scheduled"
           }
         ],
         "3": [
@@ -144,8 +143,9 @@
           {
             "a": "Vitor Tozzo",
             "b": "Filipe de Conto",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "final",
+            "score": "7–5  ·  7–5",
+            "winner": "Vitor Tozzo"
           },
           {
             "a": "Marcelo da Silva Ros",
