@@ -14,7 +14,7 @@ https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W
 
 3. Executar `pnpm run update:data` dentro do projeto. Esse comando roda `tools/generate_ranking_json.py`, lê a aba `3° CLASSE`, normaliza jogadores e confrontos e gera `public/data/ranking.json`.
 
-4. O site carrega exclusivamente `data/ranking.json`. Os componentes visuais não devem conter placares ou jogadores hardcoded. Na tabela, a coluna de saldo de games é exibida com o cabeçalho abreviado `SG` e os valores ficam alinhados à direita.
+4. O site carrega exclusivamente `data/ranking.json`. Os componentes visuais não devem conter placares ou jogadores hardcoded. Na tabela, a coluna de saldo de games é exibida com o cabeçalho abreviado `SG` e os valores ficam alinhados à direita. O filtro do ranking é por rodada: ele mostra a posição de todos os jogadores usando cumulativamente os resultados até a rodada escolhida, sem excluir quem ainda não jogou ou quem já tem partidas em rodadas posteriores.
 
 5. O JSON registra `updatedAt`, `sourceUrl`, `rounds` e `groups`. A data `updatedAt` é exibida no cabeçalho e no rodapé do site.
 

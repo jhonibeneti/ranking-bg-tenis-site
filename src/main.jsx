@@ -22,11 +22,11 @@ const orientWinnerFirst = (match) => {
   return { ...match, a: match.b, b: match.a, winner: match.b, score: match.score };
 };
 
-function buildRanking(groups) {
+function buildRanking(groups, maxRound = Infinity) {
   const rows = [];
   groups.forEach((group) => {
     group.players.forEach((player) => rows.push({ name: player, group: group.name, wins: 0, losses: 0, points: 0, played: 0, setsWon: 0, setsLost: 0, gamesFor: 0, gamesAgainst: 0, gameDiff: 0, winDiff: 0, h2h: {} }));
-    Object.values(group.matches || {}).forEach((matches) => matches.forEach((rawMatch) => {
+    Object.entries(group.matches || {}).filter(([roundId]) => Number(roundId) <= maxRound).forEach(([, matches]) => matches.forEach((rawMatch) => {
       const match = orientWinnerFirst(rawMatch);
       if (match.status !== 'final' || !match.winner || match.a === 'BYE' || match.b === 'BYE') return;
       const a = rows.find((row) => row.name === match.a);
@@ -80,7 +80,7 @@ function App() {
   const [loadError, setLoadError] = useState('');
   const [activeRound, setActiveRound] = useState(1);
   const [activeGroup, setActiveGroup] = useState('Todos');
-  const [playedGamesFilter, setPlayedGamesFilter] = useState(1);
+  const [rankingRound, setRankingRound] = useState(1);
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/ranking.json`, { cache: 'no-store' })
@@ -89,9 +89,7 @@ function App() {
       .catch((error) => setLoadError(error.message));
   }, []);
 
-  const rankingAll = useMemo(() => data ? buildRanking(data.groups) : [], [data]);
-  const availablePlayedGames = useMemo(() => [...new Set([1, ...rankingAll.map((row) => row.played).filter((played) => played > 0)])].sort((a, b) => a - b), [rankingAll]);
-  const ranking = useMemo(() => playedGamesFilter === 'all' ? rankingAll : rankingAll.filter((row) => row.played === Number(playedGamesFilter)), [rankingAll, playedGamesFilter]);
+  const ranking = useMemo(() => data ? buildRanking(data.groups, rankingRound) : [], [data, rankingRound]);
   if (loadError) return <div className="data-state error-state">Não foi possível carregar os dados do ranking. Tente novamente em instantes.</div>;
   if (!data) return <div className="data-state">Carregando dados do ranking…</div>;
 
@@ -110,8 +108,8 @@ function App() {
 
       <main className="content">
         <section className="section-block ranking-section" id="ranking">
-          <div className="section-heading ranking-heading"><div><div className="eyebrow dark"><span className="eyebrow-line" />RANKING GERAL</div><h2>Os melhores jogadores</h2></div><label className="ranking-game-filter"><span>Ranqueando jogadores com</span><select aria-label="Filtrar ranking por número de jogos" value={String(playedGamesFilter)} onChange={(event) => setPlayedGamesFilter(event.target.value === 'all' ? 'all' : Number(event.target.value))}>{availablePlayedGames.map((played) => <option key={played} value={played}>{played} {played === 1 ? 'jogo' : 'jogos'}</option>)}<option value="all">Todos os jogos</option></select></label></div>
-          <div className="ranking-layout"><div className="ranking-table"><div className="table-head"><span>#</span><span>Jogador</span><span>Grupo</span><span>J</span><span>V</span><span>SG</span><span>Pts</span></div>{ranking.length ? ranking.map((row, index) => <div className={`ranking-row ${index === 0 && activeGroup === 'Todos' ? 'top-row' : ''}`} key={row.name}><span className="rank-number">{String(index + 1).padStart(2, '0')}</span><div className="table-player"><span className="table-avatar" style={{ background: avatarColors[index % avatarColors.length] }}>{initials(row.name)}</span><strong>{row.name}</strong>{index === 0 && activeGroup === 'Todos' && <Medal className="medal" size={16} />}</div><span className="group-chip">{row.group.replace('Grupo ', 'G')}</span><span>{row.played}</span><span className="wins">{row.wins}</span><span className="game-diff">{row.gameDiff > 0 ? '+' : ''}{row.gameDiff}</span><strong className="points">{row.points}</strong></div>) : <div className="ranking-empty">Nenhum jogador tem exatamente essa quantidade de jogos.</div>}</div></div>
+          <div className="section-heading ranking-heading"><div><div className="eyebrow dark"><span className="eyebrow-line" />RANKING GERAL</div><h2>Os melhores jogadores</h2></div><label className="ranking-game-filter"><span>Ranqueando até</span><select aria-label="Filtrar ranking por rodada" value={String(rankingRound)} onChange={(event) => setRankingRound(Number(event.target.value))}>{rounds.map((round) => <option key={round.id} value={round.id}>{round.label}</option>)}</select></label></div>
+          <div className="ranking-layout"><div className="ranking-table"><div className="table-head"><span>#</span><span>Jogador</span><span>Grupo</span><span>J</span><span>V</span><span>SG</span><span>Pts</span></div>{ranking.map((row, index) => <div className={`ranking-row ${index === 0 && activeGroup === 'Todos' ? 'top-row' : ''}`} key={row.name}><span className="rank-number">{String(index + 1).padStart(2, '0')}</span><div className="table-player"><span className="table-avatar" style={{ background: avatarColors[index % avatarColors.length] }}>{initials(row.name)}</span><strong>{row.name}</strong>{index === 0 && activeGroup === 'Todos' && <Medal className="medal" size={16} />}</div><span className="group-chip">{row.group.replace('Grupo ', 'G')}</span><span>{row.played}</span><span className="wins">{row.wins}</span><span className="game-diff">{row.gameDiff > 0 ? '+' : ''}{row.gameDiff}</span><strong className="points">{row.points}</strong></div>)}</div></div>
         </section>
 
         <section className="section-block" id="rodadas">
@@ -122,7 +120,7 @@ function App() {
         </section>
         <section className="section-block method-section">
           <div className="rules-heading"><div><div className="eyebrow dark"><span className="eyebrow-line" />CRITÉRIOS</div><h2>Como o ranking é calculado</h2></div><span className="rules-caption">Critérios de desempate</span></div>
-          <div className="method-note"><strong>Vitória = 3 pontos</strong><span>1. Saldo de vitórias</span><span>2. Confronto direto</span><span>3. Saldo de sets</span><span>4. Saldo de games</span><span>Match tiebreak = 1 game</span><span>O filtro padrão compara jogadores com 1 jogo.</span></div>
+          <div className="method-note"><strong>Vitória = 3 pontos</strong><span>1. Saldo de vitórias</span><span>2. Confronto direto</span><span>3. Saldo de sets</span><span>4. Saldo de games</span><span>Match tiebreak = 1 game</span><span>O ranking parcial soma os resultados até a rodada selecionada e mantém todos os jogadores.</span></div>
         </section>
       </main>
       <footer><span>RANKING BG</span><span>Dados da planilha oficial · Atualizado em {formatUpdatedAt(data.updatedAt)}</span><span>3ª classe</span></footer>
