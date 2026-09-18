@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-17T19:53:57.975036+00:00",
+  "updatedAt": "2026-09-18T09:06:19.994518+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -302,8 +302,9 @@
           {
             "a": "João Pedro Pinheiro",
             "b": "Roque Edson",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "final",
+            "score": "6–3  ·  6–2",
+            "winner": "João Pedro Pinheiro"
           },
           {
             "a": "Leonardo Ravanello",
