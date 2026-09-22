@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-21T09:02:16.117261+00:00",
+  "updatedAt": "2026-09-22T09:01:39.715363+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -124,8 +124,7 @@
           {
             "a": "Jonas Emilio",
             "b": "Matheus Klaus",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "scheduled"
           },
           {
             "a": "Paulo Cesar",
