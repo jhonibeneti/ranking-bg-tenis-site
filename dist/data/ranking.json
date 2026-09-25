@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-24T09:00:37.609521+00:00",
+  "updatedAt": "2026-09-25T09:01:22.589488+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -159,10 +159,11 @@
             "score": "0–0  ·  0–0  ·  0–0"
           },
           {
-            "a": "Felipe Migoski",
-            "b": "Jonas Emilio",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "a": "Jonas Emilio",
+            "b": "Felipe Migoski",
+            "status": "final",
+            "score": "6–3  ·  6–1",
+            "winner": "Jonas Emilio"
           }
         ],
         "4": [
