@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25T09:01:22.589488+00:00",
+  "updatedAt": "2026-10-01T10:44:35.041108+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -155,8 +155,7 @@
           {
             "a": "Paulo Cesar",
             "b": "Rudimar Padilha",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "scheduled"
           },
           {
             "a": "Jonas Emilio",
@@ -294,10 +293,11 @@
             "score": "—"
           },
           {
-            "a": "Jhoni Beneti",
-            "b": "Fernando Lajus",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "a": "Fernando Lajus",
+            "b": "Jhoni Beneti",
+            "status": "final",
+            "score": "6–1  ·  7–5",
+            "winner": "Fernando Lajus"
           },
           {
             "a": "João Pedro Pinheiro",
@@ -309,14 +309,16 @@
           {
             "a": "Leonardo Ravanello",
             "b": "Gilberto Junior",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "final",
+            "score": "4–6  ·  6–1  ·  10–5",
+            "winner": "Leonardo Ravanello"
           },
           {
             "a": "Juliano Spuldaro",
             "b": "Marcelo Covatti",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "final",
+            "score": "6–7  ·  6–3  ·  10–7",
+            "winner": "Juliano Spuldaro"
           }
         ],
         "4": [
