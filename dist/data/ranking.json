@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-01T10:44:35.041108+00:00",
+  "updatedAt": "2026-10-03T13:55:09.656534+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -191,10 +191,11 @@
             "score": "0–0  ·  0–0  ·  0–0"
           },
           {
-            "a": "Jonas Emilio",
-            "b": "Rudimar Padilha",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "a": "Rudimar Padilha",
+            "b": "Jonas Emilio",
+            "status": "final",
+            "score": "6–1  ·  6–3",
+            "winner": "Rudimar Padilha"
           }
         ]
       }
