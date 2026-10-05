@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T13:55:09.656534+00:00",
+  "updatedAt": "2026-10-05T16:50:56.355997+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -330,10 +330,11 @@
             "score": "—"
           },
           {
-            "a": "Jhoni Beneti",
-            "b": "João Pedro Pinheiro",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "a": "João Pedro Pinheiro",
+            "b": "Jhoni Beneti",
+            "status": "final",
+            "score": "2–6  ·  6–3  ·  10–8",
+            "winner": "João Pedro Pinheiro"
           },
           {
             "a": "Fernando Lajus",
@@ -350,8 +351,9 @@
           {
             "a": "Leonardo Ravanello",
             "b": "Roque Edson",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "final",
+            "score": "6–1  ·  6–1",
+            "winner": "Leonardo Ravanello"
           }
         ]
       }
