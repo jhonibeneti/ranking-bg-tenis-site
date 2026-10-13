@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-10T10:26:42.231101+00:00",
+  "updatedAt": "2026-10-13T13:46:30.768373+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -102,8 +102,8 @@
         ],
         "2": [
           {
-            "a": "BYE",
-            "b": "Filipe de Conto",
+            "a": "Filipe de Conto",
+            "b": "BYE",
             "status": "bye",
             "score": "6–2  ·  6–1"
           },
@@ -149,8 +149,9 @@
           {
             "a": "Marcelo da Silva Ros",
             "b": "Rafael Ravanello",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "final",
+            "score": "7–5  ·  4–6  ·  10–7",
+            "winner": "Marcelo da Silva Ros"
           },
           {
             "a": "Rudimar Padilha",
