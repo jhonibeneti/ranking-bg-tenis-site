@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T13:46:30.768373+00:00",
+  "updatedAt": "2026-10-15T11:07:14.679209+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -182,8 +182,9 @@
           {
             "a": "Matheus Klaus",
             "b": "Filipe de Conto",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "final",
+            "score": "6–1  ·  6–2",
+            "winner": "Matheus Klaus"
           },
           {
             "a": "Marcelo da Silva Ros",
