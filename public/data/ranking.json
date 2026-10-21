@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-15T11:07:14.679209+00:00",
+  "updatedAt": "2026-10-21T10:38:05.288014+00:00",
   "sourceUrl": "https://docs.google.com/spreadsheets/d/12WU3GH6SdVNiTok_I_TUcaMQWcHf3YYuD5qFHl9W_UE/htmlview",
   "rounds": [
     {
@@ -87,7 +87,7 @@
           },
           {
             "a": "Rafael Ravanello",
-            "b": "Filipe Migoski",
+            "b": "Felipe Migoski",
             "status": "final",
             "score": "7–6  ·  6–3",
             "winner": "Rafael Ravanello"
@@ -156,7 +156,9 @@
           {
             "a": "Rudimar Padilha",
             "b": "Paulo Cesar",
-            "status": "scheduled"
+            "status": "final",
+            "score": "6–2  ·  6–4",
+            "winner": "Rudimar Padilha"
           },
           {
             "a": "Jonas Emilio",
@@ -171,7 +173,7 @@
             "a": "Felipe Migoski",
             "b": "BYE",
             "status": "bye",
-            "score": "6–3  ·  6–0"
+            "score": "—"
           },
           {
             "a": "Rafael Ravanello",
@@ -189,8 +191,9 @@
           {
             "a": "Marcelo da Silva Ros",
             "b": "Paulo Cesar",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "final",
+            "score": "3–5  ·  6–0  ·  10–6",
+            "winner": "Marcelo da Silva Ros"
           },
           {
             "a": "Rudimar Padilha",
@@ -198,6 +201,161 @@
             "status": "final",
             "score": "6–1  ·  6–3",
             "winner": "Rudimar Padilha"
+          }
+        ],
+        "5": [
+          {
+            "a": "Rudimar Padilha",
+            "b": "BYE",
+            "status": "bye",
+            "score": "—"
+          },
+          {
+            "a": "Vitor Tozzo",
+            "b": "Matheus Klaus",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Paulo Cesar",
+            "b": "Rafael Ravanello",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Filipe de Conto",
+            "b": "Felipe Migoski",
+            "status": "scheduled"
+          },
+          {
+            "a": "Marcelo da Silva Ros",
+            "b": "Jonas Emilio",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          }
+        ],
+        "6": [
+          {
+            "a": "Marcelo da Silva Ros",
+            "b": "BYE",
+            "status": "bye",
+            "score": "—"
+          },
+          {
+            "a": "Paulo Cesar",
+            "b": "Vitor Tozzo",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Matheus Klaus",
+            "b": "Felipe Migoski",
+            "status": "scheduled"
+          },
+          {
+            "a": "Jonas Emilio",
+            "b": "Rafael Ravanello",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Filipe de Conto",
+            "b": "Rudimar Padilha",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          }
+        ],
+        "7": [
+          {
+            "a": "BYE",
+            "b": "Rafael Ravanello",
+            "status": "bye",
+            "score": "—"
+          },
+          {
+            "a": "Vitor Tozzo",
+            "b": "Felipe Migoski",
+            "status": "scheduled"
+          },
+          {
+            "a": "Jonas Emilio",
+            "b": "Paulo Cesar",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Matheus Klaus",
+            "b": "Rudimar Padilha",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Marcelo da Silva Ros",
+            "b": "Filipe de Conto",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          }
+        ],
+        "8": [
+          {
+            "a": "BYE",
+            "b": "Paulo Cesar",
+            "status": "bye",
+            "score": "—"
+          },
+          {
+            "a": "Vitor Tozzo",
+            "b": "Jonas Emilio",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Rudimar Padilha",
+            "b": "Felipe Migoski",
+            "status": "scheduled"
+          },
+          {
+            "a": "Marcelo da Silva Ros",
+            "b": "Matheus Klaus",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Filipe de Conto",
+            "b": "Rafael Ravanello",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          }
+        ],
+        "9": [
+          {
+            "a": "Jonas Emilio",
+            "b": "BYE",
+            "status": "bye",
+            "score": "—"
+          },
+          {
+            "a": "Vitor Tozzo",
+            "b": "Rudimar Padilha",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Marcelo da Silva Ros",
+            "b": "Felipe Migoski",
+            "status": "scheduled"
+          },
+          {
+            "a": "Filipe de Conto",
+            "b": "Paulo Cesar",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Rafael Ravanello",
+            "b": "Matheus Klaus",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
           }
         ]
       }
@@ -339,16 +497,16 @@
             "winner": "João Pedro Pinheiro"
           },
           {
-            "a": "Fernando Lajus",
-            "b": "Juliano Spuldaro",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "a": "Juliano Spuldaro",
+            "b": "Fernando Lajus",
+            "status": "final",
+            "score": "6–2  ·  3–6  ·  10–6",
+            "winner": "Juliano Spuldaro"
           },
           {
             "a": "Renato Marcon",
             "b": "Marcelo Covatti",
-            "status": "scheduled",
-            "score": "0–0  ·  0–0  ·  0–0"
+            "status": "scheduled"
           },
           {
             "a": "Leonardo Ravanello",
@@ -356,6 +514,165 @@
             "status": "final",
             "score": "6–1  ·  6–1",
             "winner": "Leonardo Ravanello"
+          }
+        ],
+        "5": [
+          {
+            "a": "Roque Edson",
+            "b": "BYE",
+            "status": "bye",
+            "score": "—"
+          },
+          {
+            "a": "Juliano Spuldaro",
+            "b": "Renato Marcon",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "João Pedro Pinheiro",
+            "b": "Fernando Lajus",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Leonardo Ravanello",
+            "b": "Jhoni Beneti",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Gilberto Junior",
+            "b": "Marcelo Covatti",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          }
+        ],
+        "6": [
+          {
+            "a": "Jhoni Beneti",
+            "b": "BYE",
+            "status": "bye",
+            "score": "—"
+          },
+          {
+            "a": "João Pedro Pinheiro",
+            "b": "Juliano Spuldaro",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Gilberto Junior",
+            "b": "Renato Marcon",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Fernando Lajus",
+            "b": "Leonardo Ravanello",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Roque Edson",
+            "b": "Marcelo Covatti",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          }
+        ],
+        "7": [
+          {
+            "a": "Fernando Lajus",
+            "b": "BYE",
+            "status": "bye",
+            "score": "—"
+          },
+          {
+            "a": "Juliano Spuldaro",
+            "b": "Gilberto Junior",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Leonardo Ravanello",
+            "b": "João Pedro Pinheiro",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Roque Edson",
+            "b": "Renato Marcon",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Jhoni Beneti",
+            "b": "Marcelo Covatti",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          }
+        ],
+        "8": [
+          {
+            "a": "João Pedro Pinheiro",
+            "b": "BYE",
+            "status": "bye",
+            "score": "—"
+          },
+          {
+            "a": "Juliano Spuldaro",
+            "b": "Leonardo Ravanello",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Roque Edson",
+            "b": "Gilberto Junior",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Jhoni Beneti",
+            "b": "Renato Marcon",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Marcelo Covatti",
+            "b": "Fernando Lajus",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          }
+        ],
+        "9": [
+          {
+            "a": "Leonardo Ravanello",
+            "b": "BYE",
+            "status": "bye",
+            "score": "—"
+          },
+          {
+            "a": "Roque Edson",
+            "b": "Juliano Spuldaro",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Jhoni Beneti",
+            "b": "Gilberto Junior",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
+          },
+          {
+            "a": "Marcelo Covatti",
+            "b": "João Pedro Pinheiro",
+            "status": "scheduled"
+          },
+          {
+            "a": "Renato Marcon",
+            "b": "Fernando Lajus",
+            "status": "scheduled",
+            "score": "0–0  ·  0–0  ·  0–0"
           }
         ]
       }
